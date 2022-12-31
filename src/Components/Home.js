@@ -1,11 +1,14 @@
 import "./Home.css";
 import Cards from "./Cards";
 import Data from "./backend/Data";
+import NavBar from "./NavBar";
+import ItemListContainer from "./ItemListContainer";
 
 function Home() {
     return (
-        <div className="container-fluid">
-            <h3 className="text-center mt-5 text-uppercase">My Shop</h3>
+        <div className="container">
+            <NavBar />
+            <ItemListContainer />
             <div className="container py-4">
                 <div className="row">
                     {Data.products.map((item, index) => {

@@ -9,9 +9,9 @@ function Cards({ img, title, text, price, item }) {
                 <div className="card h-100 shadow rounded-0">
                     <img src={img} alt="" className="card-img-top img-fluid" />
                     <div className="card-body">
-                        <div className="d-flex justify-content-between">
+                        <div className="d-flex justify-content-between align-items-center">
                             <h5 className="card-title">{title}</h5>
-                            <span className="fw-bolder">{price}</span>
+                            <span className="fw-bolder fs-5">{price}</span>
                         </div>
                         <div className="">
                             <p className="card-text">{text}</p>

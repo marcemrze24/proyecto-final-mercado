@@ -1,6 +1,5 @@
 import "./App.css";
 import Home from "./Components/Home";
-import Cart from "./Components/Cart";
 import { CartProvider } from "react-use-cart";
 
 function App() {
@@ -8,7 +7,6 @@ function App() {
         <div className="App">
             <CartProvider>
                 <Home />
-                <Cart />
             </CartProvider>
         </div>
     );
