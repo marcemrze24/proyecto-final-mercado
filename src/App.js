@@ -1,14 +1,15 @@
-import "./App.css";
-import Home from "./Components/Home";
-import { CartProvider } from "react-use-cart";
+import { Container } from "react-bootstrap";
+import ItemCount from "./Components/ItemCount";
+import ItemListContainer from "./Components/ItemListContainer";
+import NavBar from "./Components/NavBar";
 
 function App() {
     return (
-        <div className="App">
-            <CartProvider>
-                <Home />
-            </CartProvider>
-        </div>
+        <Container fluid>
+            <NavBar />
+            <ItemListContainer />
+            <ItemCount />
+        </Container>
     );
 }
 
