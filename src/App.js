@@ -1,14 +1,12 @@
 import { Container } from "react-bootstrap";
-import ItemCount from "./Components/ItemCount";
-import ItemListContainer from "./Components/ItemListContainer";
-import NavBar from "./Components/NavBar";
+import ItemListContainer from "./components/ItemListContainer";
+import NavBar from "./components/NavBar";
 
 function App() {
     return (
         <Container fluid>
             <NavBar />
             <ItemListContainer />
-            <ItemCount />
         </Container>
     );
 }
