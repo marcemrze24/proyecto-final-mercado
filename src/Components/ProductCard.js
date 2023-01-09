@@ -1,13 +1,13 @@
-import { Card } from "react-bootstrap";
-import { AddItemButton } from "./AddItemButton";
-function ProductCard() {
+import { Card, Button } from "react-bootstrap";
+function ProductCard({ name, description, price, image }) {
     return (
         <Card className="border-0">
-            <Card.Img variant="top" src={require("../images/product-15.jpg")} />
-            <Card.Body>
-                <Card.Title>Product 15</Card.Title>
-                <Card.Text>Some product generic information</Card.Text>
-                <AddItemButton />
+            <Card.Img variant="top" src={image} />
+            <Card.Body className="px-0">
+                <Card.Title>{name}</Card.Title>
+                <Card.Subtitle>{description}</Card.Subtitle>
+                <Card.Text className="fs-5">$ {price}</Card.Text>
+                <Button variant="success">Add to cart</Button>
             </Card.Body>
         </Card>
     );
