@@ -1,13 +1,20 @@
-import { Container } from "react-bootstrap";
 import ItemListContainer from "./components/ItemListContainer";
 import NavBar from "./components/NavBar";
+import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 
 function App() {
     return (
-        <Container fluid>
+        <BrowserRouter>
             <NavBar />
-            <ItemListContainer />
-        </Container>
+            <Routes>
+                <Route path="/" element={<ItemListContainer />} />
+                <Route
+                    path="/products/:categoryId"
+                    element={<ItemListContainer />}
+                />
+                <Route path="*" element={<Navigate to={"/"} />} />
+            </Routes>
+        </BrowserRouter>
     );
 }
 
