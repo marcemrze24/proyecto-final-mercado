@@ -12,24 +12,30 @@ function NavBar() {
                 <Navbar.Toggle aria-controls="basic-navbar-nav" />
                 <Navbar.Collapse id="basic-navbar-nav">
                     <Nav className="mx-auto">
-                        <Link
-                            to={"/products/women"}
-                            className="text-decoration-none text-danger"
-                        >
-                            Women
-                        </Link>
-                        <Link
-                            to={"/products/men"}
-                            className="mx-5 text-decoration-none text-danger"
-                        >
-                            Men
-                        </Link>
-                        <Link
-                            to={"/products/kids"}
-                            className="text-decoration-none text-danger"
-                        >
-                            Kids
-                        </Link>
+                        <Nav.Link>
+                            <Link
+                                to={"/products/women"}
+                                className="text-decoration-none text-danger"
+                            >
+                                Women
+                            </Link>
+                        </Nav.Link>
+                        <Nav.Link>
+                            <Link
+                                to={"/products/men"}
+                                className="mx-lg-5 text-decoration-none text-danger"
+                            >
+                                Men
+                            </Link>
+                        </Nav.Link>
+                        <Nav.Link>
+                            <Link
+                                to={"/products/kids"}
+                                className="text-decoration-none text-danger"
+                            >
+                                Kids
+                            </Link>
+                        </Nav.Link>
                     </Nav>
                     <Nav>
                         <Nav.Item>

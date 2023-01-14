@@ -7,3 +7,11 @@ export const GetData = () => {
         }, 1500);
     });
 };
+export const GetDataById = (id) => {
+    return new Promise((resolve, reject) => {
+        setTimeout(() => {
+            const item = MOCK_DATA.find((el) => el.id === id);
+            resolve(item);
+        }, 1500);
+    });
+};

@@ -5,10 +5,11 @@ function ProductCard({ name, description, price, image, category }) {
             <Card.Img variant="top" src={image} />
             <Card.Body className="px-0">
                 <Card.Title>{name}</Card.Title>
-                <Card.Subtitle>{description}</Card.Subtitle>
                 <Card.Text className="fs-5">$ {price}</Card.Text>
+                <Button variant="outline-success" className="mb-4">
+                    View More
+                </Button>
                 <Card.Footer>Category: {category}</Card.Footer>
-                <Button variant="success">Add to cart</Button>
             </Card.Body>
         </Card>
     );
