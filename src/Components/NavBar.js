@@ -1,6 +1,6 @@
 import { Navbar, Container, Nav } from "react-bootstrap";
 import CartWidget from "./CartWidget";
-import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 //
 function NavBar() {
     return (
@@ -12,30 +12,60 @@ function NavBar() {
                 <Navbar.Toggle aria-controls="basic-navbar-nav" />
                 <Navbar.Collapse id="basic-navbar-nav">
                     <Nav className="mx-auto">
-                        <Nav.Link>
-                            <Link
-                                to={"/products/women"}
-                                className="text-decoration-none text-danger"
+                        <Nav.Item className="mx-lg-4">
+                            <NavLink
+                                to={"/category/women"}
+                                style={({ isActive }) =>
+                                    isActive
+                                        ? {
+                                              textDecoration: "none",
+                                              color: "red",
+                                          }
+                                        : {
+                                              textDecoration: "none",
+                                              color: "gray",
+                                          }
+                                }
                             >
                                 Women
-                            </Link>
-                        </Nav.Link>
-                        <Nav.Link>
-                            <Link
-                                to={"/products/men"}
-                                className="mx-lg-5 text-decoration-none text-danger"
+                            </NavLink>
+                        </Nav.Item>
+                        <Nav.Item className="mx-lg-4">
+                            <NavLink
+                                to={"/category/men"}
+                                style={({ isActive }) =>
+                                    isActive
+                                        ? {
+                                              textDecoration: "none",
+                                              color: "red",
+                                          }
+                                        : {
+                                              textDecoration: "none",
+                                              color: "gray",
+                                          }
+                                }
                             >
                                 Men
-                            </Link>
-                        </Nav.Link>
-                        <Nav.Link>
-                            <Link
-                                to={"/products/kids"}
-                                className="text-decoration-none text-danger"
+                            </NavLink>
+                        </Nav.Item>
+                        <Nav.Item className="mx-lg-4">
+                            <NavLink
+                                to={"/category/kids"}
+                                style={({ isActive }) =>
+                                    isActive
+                                        ? {
+                                              textDecoration: "none",
+                                              color: "red",
+                                          }
+                                        : {
+                                              textDecoration: "none",
+                                              color: "gray",
+                                          }
+                                }
                             >
                                 Kids
-                            </Link>
-                        </Nav.Link>
+                            </NavLink>
+                        </Nav.Item>
                     </Nav>
                     <Nav>
                         <Nav.Item>

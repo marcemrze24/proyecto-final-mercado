@@ -1,5 +1,5 @@
 import { Row, Col } from "react-bootstrap";
-import ProductCard from "./ProductCard";
+import Item from "./Item";
 
 export const ItemList = ({ product }) => {
     return (
@@ -8,7 +8,7 @@ export const ItemList = ({ product }) => {
             {product.map((item) => {
                 return (
                     <Col key={item.id}>
-                        <ProductCard {...item} />
+                        <Item {...item} />
                     </Col>
                 );
             })}

@@ -8,21 +8,14 @@ import { useParams } from "react-router-dom";
 function ItemListContainer() {
     const [product, setProduct] = useState([]);
     const { categoryId } = useParams();
-
     useEffect(() => {
-        GetData()
-            .then((data) => {
-                if (categoryId) {
-                    setProduct(
-                        data.filter((prod) => prod.category === categoryId)
-                    );
-                } else {
-                    setProduct(data);
-                }
-            })
-            .catch((err) => {
-                console.log(err);
-            });
+        GetData().then((data) => {
+            categoryId
+                ? setProduct(
+                      data.filter((prod) => prod.category === categoryId)
+                  )
+                : setProduct(data);
+        });
     }, [categoryId]);
     return (
         <Container className="my-5">
