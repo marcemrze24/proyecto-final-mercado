@@ -7,7 +7,7 @@ function Item({ name, price, image, category, id }) {
             <Card.Body className="px-0">
                 <Card.Title>{name}</Card.Title>
                 <Card.Text className="fs-5">$ {price}</Card.Text>
-                <Link className="btn btn-outline-primary" to={`item/${id}`}>
+                <Link className="btn btn-outline-primary" to={`/item/${id}`}>
                     View More
                 </Link>
                 <Card.Footer>Category: {category}</Card.Footer>
