@@ -1,7 +1,6 @@
 import { Container } from "react-bootstrap";
 import { GetData } from "../helpers/GetData";
 import { useState, useEffect } from "react";
-import { ItemFooter } from "./ItemFooter";
 import { ItemList } from "./ItemList";
 import { useParams } from "react-router-dom";
 
@@ -20,7 +19,6 @@ function ItemListContainer() {
     return (
         <Container className="my-5">
             <ItemList product={product} />
-            <ItemFooter />
         </Container>
     );
 }
