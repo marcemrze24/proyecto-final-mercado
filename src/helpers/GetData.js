@@ -4,7 +4,7 @@ export const GetData = () => {
     return new Promise((resolve, reject) => {
         setTimeout(() => {
             resolve(MOCK_DATA);
-        }, 1500);
+        }, 500);
     });
 };
 export const GetDataById = (id) => {
@@ -12,6 +12,6 @@ export const GetDataById = (id) => {
         setTimeout(() => {
             const item = MOCK_DATA.find((el) => el.id === id);
             resolve(item);
-        }, 1500);
+        }, 500);
     });
 };

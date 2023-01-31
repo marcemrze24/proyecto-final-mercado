@@ -4,62 +4,65 @@ import { NavLink } from "react-router-dom";
 //
 function NavBar() {
     return (
-        <Navbar bg="light" expand="lg" className="px-5">
+        <Navbar bg="dark" variant="dark" expand="lg" className="px-5 py-3">
             <Container>
-                <Navbar.Brand href="/" className="fs-4">
+                <Navbar.Brand href="/" className="fs-3 fw-semibold">
                     Shopper.
                 </Navbar.Brand>
                 <Navbar.Toggle aria-controls="basic-navbar-nav" />
-                <Navbar.Collapse id="basic-navbar-nav">
-                    <Nav className="mx-auto">
-                        <Nav.Item className="mx-lg-4">
+                <Navbar.Collapse
+                    id="basic-navbar-nav"
+                    className="justify-content-between pt-2"
+                >
+                    <Nav>
+                        <Nav.Item className="mx-lg-4 fw-bold">
                             <NavLink
                                 to={"/category/women"}
                                 style={({ isActive }) =>
                                     isActive
                                         ? {
                                               textDecoration: "none",
-                                              color: "red",
+                                              color: "#FFF5EE",
                                           }
                                         : {
                                               textDecoration: "none",
-                                              color: "gray",
+                                              color: "rgba(255, 255, 255, 0.6)",
                                           }
                                 }
                             >
                                 Women
                             </NavLink>
                         </Nav.Item>
-                        <Nav.Item className="mx-lg-4">
+                        <Nav.Item className="mx-lg-4 fw-bold">
                             <NavLink
                                 to={"/category/men"}
                                 style={({ isActive }) =>
                                     isActive
                                         ? {
                                               textDecoration: "none",
-                                              color: "red",
+                                              color: "#FFF5EE",
                                           }
                                         : {
                                               textDecoration: "none",
-                                              color: "gray",
+                                              color: "rgba(255, 255, 255, 0.6)",
                                           }
                                 }
                             >
                                 Men
                             </NavLink>
                         </Nav.Item>
-                        <Nav.Item className="mx-lg-4">
+                        <Nav.Item className="mx-lg-4 fw-bold">
                             <NavLink
                                 to={"/category/kids"}
                                 style={({ isActive }) =>
                                     isActive
                                         ? {
                                               textDecoration: "none",
-                                              color: "red",
+                                              color: "#FFF5EE",
                                           }
                                         : {
                                               textDecoration: "none",
-                                              color: "gray",
+                                              color: "rgba(255, 255, 255, 0.6)",
                                           }
                                 }
                             >
@@ -67,7 +70,7 @@ function NavBar() {
                             </NavLink>
                         </Nav.Item>
                     </Nav>
-                    <Nav>
+                    <Nav className="pt-sm-3 pt-lg-0">
                         <Nav.Item>
                             <CartWidget />
                         </Nav.Item>

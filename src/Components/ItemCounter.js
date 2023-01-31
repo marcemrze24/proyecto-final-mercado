@@ -1,26 +1,29 @@
-import { Button } from "react-bootstrap";
+import { Button, ButtonGroup } from "react-bootstrap";
 
-const ItemCounter = ({ counter, setCounter, max }) => {
-    const handleSubs = () => {
-        counter > 1 && setCounter(counter - 1);
-    };
-    const handleSum = () => {
-        counter < max && setCounter(counter + 1);
-    };
-    const handleReset = () => {
-        setCounter(1);
-    };
+const ItemCounter = ({ counter, handleSubs, handleSum }) => {
     return (
-        <div className="my-3">
-            <Button onClick={handleSubs} variant="outline-primary">
+        <ButtonGroup
+            aria-label="counter buttons"
+            className="border border-secondary my-3 rounded-0"
+        >
+            <Button
+                onClick={handleSubs}
+                variant="light"
+                className="px-4 btn-sm rounded-0 fw-bolder"
+            >
                 -
             </Button>
-            <span className="mx-4">{counter}</span>
-            <Button onClick={handleSum}>+</Button>
-            <Button variant="danger" onClick={handleReset} className="mx-4">
-                Reset Counter
+            <Button variant="light" className="px-4 btn-sm rounded-0" disabled>
+                {counter}
             </Button>
-        </div>
+            <Button
+                onClick={handleSum}
+                variant="light"
+                className="px-4 btn-sm rounded-0 fw-bolder"
+            >
+                +
+            </Button>
+        </ButtonGroup>
     );
 };
 

@@ -18,7 +18,7 @@ function ItemListContainer() {
     }, [categoryId]);
     return (
         <Container className="my-5">
-            <ItemList product={product} />
+            <ItemList product={product} categoryId={categoryId} />
         </Container>
     );
 }
