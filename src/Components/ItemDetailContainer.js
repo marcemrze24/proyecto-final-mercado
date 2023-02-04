@@ -1,15 +1,19 @@
 import { useEffect, useState } from "react";
-import { GetDataById } from "../helpers/GetData";
 import ItemDetail from "./ItemDetail";
 import { useParams, useNavigate } from "react-router-dom";
 import { Container, Row, Col, Button } from "react-bootstrap";
+import { doc, getDoc } from "@firebase/firestore";
+import { db } from "../firebase/config";
 
 const ItemDetailContainer = () => {
     const navigate = useNavigate();
     const [item, setItem] = useState(null);
     const { itemId } = useParams();
     useEffect(() => {
-        GetDataById(Number(itemId)).then((data) => setItem(data));
+        const docRef = doc(db, "products", itemId);
+        getDoc(docRef).then((snapshot) => {
+            setItem(snapshot.data());
+        });
     }, [itemId]);
 
     return (

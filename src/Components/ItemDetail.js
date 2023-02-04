@@ -35,7 +35,6 @@ const ItemDetail = ({
         };
         !isInCart(id) ? addToCart(item) : updateCartItem(item);
     };
-    console.log(cart);
     return (
         <Row>
             <Col

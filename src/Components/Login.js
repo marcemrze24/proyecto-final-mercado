@@ -56,7 +56,7 @@ const Login = () => {
                 </Form.Group>
                 <div className="d-flex justify-content-between">
                     <Button variant="primary" type="submit">
-                        Submit
+                        Log In
                     </Button>
                     <Link to={"/sign"} className="btn btn-success">
                         Sign in
