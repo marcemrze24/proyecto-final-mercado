@@ -6,19 +6,28 @@ import { useParams } from "react-router-dom";
 
 function ItemListContainer() {
     const [product, setProduct] = useState([]);
+    const [loading, setLoading] = useState(true);
     const { categoryId } = useParams();
     useEffect(() => {
-        GetData().then((data) => {
-            categoryId
-                ? setProduct(
-                      data.filter((prod) => prod.category === categoryId)
-                  )
-                : setProduct(data);
-        });
+        GetData()
+            .then((data) => {
+                categoryId
+                    ? setProduct(
+                          data.filter((prod) => prod.category === categoryId)
+                      )
+                    : setProduct(data);
+            })
+            .finally(() => {
+                setLoading(false);
+            });
     }, [categoryId]);
     return (
         <Container className="my-5">
-            <ItemList product={product} categoryId={categoryId} />
+            {loading ? (
+                <h1>Loading...</h1>
+            ) : (
+                <ItemList product={product} categoryId={categoryId} />
+            )}
         </Container>
     );
 }

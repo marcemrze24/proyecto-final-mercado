@@ -1,14 +1,17 @@
 import { Navbar, Container, Nav } from "react-bootstrap";
 import CartWidget from "./CartWidget";
-import { NavLink } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 //
 function NavBar() {
     return (
         <Navbar bg="dark" variant="dark" expand="lg" className="px-5 py-3">
             <Container>
-                <Navbar.Brand href="/" className="fs-3 fw-semibold">
-                    Shopper.
-                </Navbar.Brand>
+                <Link to={"/"} className="text-light text-decoration-none">
+                    <Navbar.Brand className="fs-3 fw-semibold">
+                        Shopper.
+                    </Navbar.Brand>
+                </Link>
+
                 <Navbar.Toggle aria-controls="basic-navbar-nav" />
                 <Navbar.Collapse
                     id="basic-navbar-nav"
