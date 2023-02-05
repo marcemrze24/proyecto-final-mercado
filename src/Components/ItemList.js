@@ -2,6 +2,7 @@ import { Row, Col } from "react-bootstrap";
 import Item from "./Item";
 
 export const ItemList = ({ product, categoryId }) => {
+    console.log(product);
     return (
         <div>
             <Row>
@@ -24,9 +25,9 @@ export const ItemList = ({ product, categoryId }) => {
             </Row>
             <Row lg={4} md={3} sm={2} xs={1} className="g-4">
                 {/*START:  COl > CARD */}
-                {product.map((item) => {
+                {product.map((item, index) => {
                     return (
-                        <Col key={item.id} xs={8}>
+                        <Col key={index} xs={8}>
                             <Item {...item} />
                         </Col>
                     );

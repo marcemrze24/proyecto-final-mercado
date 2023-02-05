@@ -16,25 +16,28 @@ export const Cart = () => {
                 </Col>
             </Row>
             <Row>
-                <Col lg={8}>
+                <Col lg={8} xs>
                     <Row className="border-bottom py-2 text-uppercase text-muted">
-                        <Col lg={5}>
+                        <Col lg={5} xs>
                             <span>product</span>
                         </Col>
-                        <Col lg={2}>
+                        <Col lg={2} xs>
                             <span>price</span>
                         </Col>
-                        <Col lg={2}>
+                        <Col lg={2} xs>
                             <span>quantity</span>
                         </Col>
-                        <Col lg={2}>
+                        <Col lg={2} xs>
                             <span>total</span>
                         </Col>
                     </Row>
                 </Col>
             </Row>
             <Row>
-                <CartDetail />
+                <Col lg={8}>
+                    <CartDetail />
+                </Col>
+
                 <CartCheckout />
             </Row>
         </Container>

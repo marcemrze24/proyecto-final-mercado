@@ -6,13 +6,13 @@ import { CartContext } from "./CartContext";
 const CartDetail = () => {
     const { cart, removeCartItem } = useContext(CartContext);
     return (
-        <Col lg={8}>
-            {cart.map((item) => (
+        <>
+            {cart.map((item, index) => (
                 <Row
                     className="align-items-center py-4 my-2 border-bottom fs-6"
-                    key={item.id}
+                    key={index}
                 >
-                    <Col lg={5}>
+                    <Col lg={5} sm>
                         <Row className="align-items-center">
                             <Col lg={3}>
                                 <img
@@ -27,18 +27,18 @@ const CartDetail = () => {
                             </Col>
                         </Row>
                     </Col>
-                    <Col lg={2}>
+                    <Col lg={2} sm>
                         <p className="m-0">$ {item.price}</p>
                     </Col>
-                    <Col lg={2}>
+                    <Col lg={2} sm>
                         <p className="m-0">{item.counter}</p>
                     </Col>
-                    <Col lg={2}>
+                    <Col lg={2} sm>
                         <p className="m-0">
                             $ {parseFloat(item.counter * item.price).toFixed(2)}
                         </p>
                     </Col>
-                    <Col lg={1}>
+                    <Col lg={1} sm={1}>
                         <Button
                             variant="light"
                             className="rounded-circle"
@@ -51,7 +51,7 @@ const CartDetail = () => {
                     </Col>
                 </Row>
             ))}
-        </Col>
+        </>
     );
 };
 

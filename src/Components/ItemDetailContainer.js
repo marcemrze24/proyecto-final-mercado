@@ -12,7 +12,7 @@ const ItemDetailContainer = () => {
     useEffect(() => {
         const docRef = doc(db, "products", itemId);
         getDoc(docRef).then((snapshot) => {
-            setItem(snapshot.data());
+            setItem({ ...snapshot.data(), id: snapshot.id });
         });
     }, [itemId]);
 
