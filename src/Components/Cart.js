@@ -15,19 +15,19 @@ export const Cart = () => {
                     </h1>
                 </Col>
             </Row>
-            <Row>
-                <Col lg={8} xs>
+            <Row className="d-none d-lg-block">
+                <Col lg={8}>
                     <Row className="border-bottom py-2 text-uppercase text-muted">
-                        <Col lg={5} xs>
+                        <Col lg={5}>
                             <span>product</span>
                         </Col>
-                        <Col lg={2} xs>
+                        <Col lg={2}>
                             <span>price</span>
                         </Col>
-                        <Col lg={2} xs>
+                        <Col lg={2}>
                             <span>quantity</span>
                         </Col>
-                        <Col lg={2} xs>
+                        <Col lg={2}>
                             <span>total</span>
                         </Col>
                     </Row>

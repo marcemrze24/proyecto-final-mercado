@@ -1,12 +1,12 @@
 import React from "react";
 import { useContext } from "react";
 import { useState } from "react";
-import { Button, Container, Form, Row } from "react-bootstrap";
+import { Button, Col, Container, Form, Row } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import { LoginContext } from "./LoginContext";
 
 const Login = () => {
-    const { user, validateUser } = useContext(LoginContext);
+    const { user, login, loading } = useContext(LoginContext);
 
     const [values, setValues] = useState({
         email: "",
@@ -15,7 +15,7 @@ const Login = () => {
 
     const handleFormSubmit = (e) => {
         e.preventDefault();
-        validateUser(values);
+        login(values);
     };
 
     const handleInputChange = (e) => {
@@ -26,43 +26,66 @@ const Login = () => {
     };
 
     return (
-        <Container className="my-5 w-50">
-            <Row>
-                <h1 className="mb-5">
-                    Welcome to <span className="fw-bold">Shopper.</span>
-                </h1>
+        <Container className="my-5 w-100 pt-5">
+            <Row className="pt-5 mt-5">
+                <Col lg={8}>
+                    <h1 className="mb-5">
+                        Welcome to <span className="fw-bold">Shopper.</span>
+                    </h1>
+                    <p className="text-muted fs-5 w-75">
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                        Quasi nam deserunt, iste error suscipit vel odit.
+                        Commodi, voluptas modi doloremque enim fuga velit
+                        nesciunt quam voluptatum quisquam perferendis neque
+                        deserunt.
+                    </p>
+                </Col>
+                <Col lg={4} className="mt-5">
+                    {user.error && <p className="text-danger">{user.error}</p>}
+                    <Form onSubmit={handleFormSubmit}>
+                        <Form.Group controlId="formEmail">
+                            <Form.Label>Email adress</Form.Label>
+                            <Form.Control
+                                type="email"
+                                placeholder="Enter email"
+                                name="email"
+                                value={values.email}
+                                onChange={handleInputChange}
+                            />
+                        </Form.Group>
+                        <Form.Group controlId="formPassword" className="my-3">
+                            <Form.Label>Password</Form.Label>
+                            <Form.Control
+                                type="password"
+                                placeholder="Enter password"
+                                name="password"
+                                value={values.password}
+                                onChange={handleInputChange}
+                            />
+                        </Form.Group>
+                        <Row>
+                            <Col lg={12} className="border-bottom pb-4">
+                                <Button
+                                    variant="primary"
+                                    type="submit"
+                                    className="w-100 fw-semibold py-2"
+                                    disabled={loading}
+                                >
+                                    Log In
+                                </Button>
+                            </Col>
+                            <Col lg={12} className="pt-4 text-center">
+                                <Link
+                                    to={"/sign"}
+                                    className="btn btn-success w-50 fw-semibold py-2"
+                                >
+                                    Sign in
+                                </Link>
+                            </Col>
+                        </Row>
+                    </Form>
+                </Col>
             </Row>
-            {user.error && <p className="text-danger">{user.error}</p>}
-            <Form onSubmit={handleFormSubmit}>
-                <Form.Group controlId="formEmail">
-                    <Form.Label>Email adress</Form.Label>
-                    <Form.Control
-                        type="email"
-                        placeholder="Enter email"
-                        name="email"
-                        value={values.email}
-                        onChange={handleInputChange}
-                    />
-                </Form.Group>
-                <Form.Group controlId="formPassword" className="my-3">
-                    <Form.Label>Password</Form.Label>
-                    <Form.Control
-                        type="password"
-                        placeholder="Enter password"
-                        name="password"
-                        value={values.password}
-                        onChange={handleInputChange}
-                    />
-                </Form.Group>
-                <div className="d-flex justify-content-between">
-                    <Button variant="primary" type="submit">
-                        Log In
-                    </Button>
-                    <Link to={"/sign"} className="btn btn-success">
-                        Sign in
-                    </Link>
-                </div>
-            </Form>
         </Container>
     );
 };

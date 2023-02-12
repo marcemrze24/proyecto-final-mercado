@@ -3,7 +3,11 @@ import { Link } from "react-router-dom";
 function Item({ name, price, image, id }) {
     return (
         <Card className="border-0">
-            <Card.Img variant="top" src={image} />
+            <Card.Img
+                variant="top"
+                style={{ width: "250px", height: "300px" }}
+                src={image}
+            />
             <Card.Body className="px-0">
                 <Card.Title className="fw-semibold">{name}</Card.Title>
                 <Card.Text className="fs-5 fw-normal">

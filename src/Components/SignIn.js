@@ -4,31 +4,26 @@ import { useNavigate } from "react-router-dom";
 import { SignInContext } from "./SignInContext";
 
 const SignIn = () => {
+    const { signIn } = useContext(SignInContext);
     const navigate = useNavigate();
-    const { addUserToDB } = useContext(SignInContext);
     const [newUser, setNewUser] = useState({
         email: "",
         password: "",
-        address: "",
-        country: "",
-        city: "",
-        locality: "",
-        zip: "",
     });
     const handleInputChange = (e) => {
         setNewUser({ ...newUser, [e.target.name]: e.target.value });
     };
     const handleNewUser = (e) => {
         e.preventDefault();
-        addUserToDB(newUser);
+        signIn(newUser);
         navigate(-1);
     };
 
     return (
-        <Container className="my-5">
-            <Form onSubmit={handleNewUser}>
-                <Row className="mb-3">
-                    <Form.Group as={Col} controlId="formEmail">
+        <Container className="my-5 w-25 pt-5">
+            <Row>
+                <Form onSubmit={handleNewUser}>
+                    <Form.Group controlId="formEmail">
                         <Form.Label>Email</Form.Label>
                         <Form.Control
                             type="email"
@@ -39,7 +34,7 @@ const SignIn = () => {
                         />
                     </Form.Group>
 
-                    <Form.Group as={Col} controlId="formPassword">
+                    <Form.Group controlId="formPassword" className="my-3">
                         <Form.Label>Password</Form.Label>
                         <Form.Control
                             type="password"
@@ -49,78 +44,31 @@ const SignIn = () => {
                             onChange={handleInputChange}
                         />
                     </Form.Group>
-                </Row>
-                <Form.Group className="mb-3" controlId="formAddress">
-                    <Form.Label>Address</Form.Label>
-                    <Form.Control
-                        type="text"
-                        placeholder="Habana 4310"
-                        name="address"
-                        value={newUser.address}
-                        onChange={handleInputChange}
-                    />
-                </Form.Group>
 
-                <Form.Group controlId="formCountry" className="mb-3">
-                    <Form.Label>Country</Form.Label>
-                    <Form.Control
-                        type="text"
-                        placeholder="Argentina, Brasil, Paraguay..."
-                        name="country"
-                        value={newUser.country}
-                        onChange={handleInputChange}
-                    />
-                </Form.Group>
-
-                <Row className="mb-3">
-                    <Form.Group as={Col} controlId="formCity">
-                        <Form.Label>City</Form.Label>
-                        <Form.Control
-                            type="text"
-                            placeholder="La Matanza, Quilmes..."
-                            name="city"
-                            value={newUser.city}
-                            onChange={handleInputChange}
-                        />
-                    </Form.Group>
-
-                    <Form.Group as={Col} controlId="formLocality">
-                        <Form.Label>Locality</Form.Label>
-                        <Form.Control
-                            type="text"
-                            placeholder="La Tablada, Aldo Bonzi..."
-                            name="locality"
-                            value={newUser.locality}
-                            onChange={handleInputChange}
-                        />
-                    </Form.Group>
-
-                    <Form.Group as={Col} controlId="formZip">
-                        <Form.Label>Zip</Form.Label>
-                        <Form.Control
-                            type="number"
-                            placeholder="1752"
-                            name="zip"
-                            value={newUser.zip}
-                            onChange={handleInputChange}
-                        />
-                    </Form.Group>
-                </Row>
-
-                <div className="d-flex justify-content-between">
-                    <Button
-                        variant="danger"
-                        onClick={() => {
-                            navigate(-1);
-                        }}
-                    >
-                        Go Back
-                    </Button>
-                    <Button variant="success" type="submit">
-                        Create user
-                    </Button>
-                </div>
-            </Form>
+                    <Row>
+                        <Col lg={12} className="border-bottom pb-4">
+                            <Button
+                                variant="success"
+                                type="submit"
+                                className="w-100 fw-semibold py-2"
+                            >
+                                Create user
+                            </Button>
+                        </Col>
+                        <Col lg={12} className="text-center pt-4">
+                            <Button
+                                variant="danger"
+                                className="w-50 fw-semibold py-2"
+                                onClick={() => {
+                                    navigate(-1);
+                                }}
+                            >
+                                Go Back
+                            </Button>
+                        </Col>
+                    </Row>
+                </Form>
+            </Row>
         </Container>
     );
 };
