@@ -1,6 +1,6 @@
 import { useContext } from "react";
 import { Col, Row, Card, Button } from "react-bootstrap";
-import { Link, Navigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 import { CartContext } from "./CartContext";
 
 const CartCheckout = () => {

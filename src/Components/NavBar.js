@@ -29,7 +29,7 @@ function NavBar() {
                             className="justify-content-between pt-2"
                         >
                             <Nav>
-                                <Nav.Item className="mx-lg-4 fw-bold">
+                                <Nav.Item className="mx-lg-4 mb-1 mb-lg-0 fw-bold">
                                     <NavLink
                                         to={"/category/women"}
                                         style={({ isActive }) =>
@@ -47,7 +47,7 @@ function NavBar() {
                                         Women
                                     </NavLink>
                                 </Nav.Item>
-                                <Nav.Item className="mx-lg-4 fw-bold">
+                                <Nav.Item className="mx-lg-4 mb-1 mb-lg-0 fw-bold">
                                     <NavLink
                                         to={"/category/men"}
                                         style={({ isActive }) =>
@@ -65,7 +65,7 @@ function NavBar() {
                                         Men
                                     </NavLink>
                                 </Nav.Item>
-                                <Nav.Item className="mx-lg-4 fw-bold">
+                                <Nav.Item className="mx-lg-4 mb-1 mb-lg-0 fw-bold">
                                     <NavLink
                                         to={"/category/kids"}
                                         style={({ isActive }) =>
@@ -84,11 +84,11 @@ function NavBar() {
                                     </NavLink>
                                 </Nav.Item>
                             </Nav>
-                            <Nav className="pt-sm-5 pt-lg-0">
+                            <Nav className="pt-4 pt-lg-0">
                                 <Nav.Item>
                                     <CartWidget />
                                 </Nav.Item>
-                                <Nav.Item className="px-lg-5 pt-sm-2 pt-lg-0">
+                                <Nav.Item className="px-lg-5 pt-2 pt-lg-0">
                                     <Button
                                         variant="danger"
                                         size="sm"

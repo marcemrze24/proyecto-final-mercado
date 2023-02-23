@@ -2,7 +2,6 @@ import { Row, Col } from "react-bootstrap";
 import Item from "./Item";
 
 export const ItemList = ({ product, categoryId }) => {
-    console.log(product);
     return (
         <div>
             <Row>
@@ -23,11 +22,11 @@ export const ItemList = ({ product, categoryId }) => {
                     {product.length > 0 && product.length} products
                 </p>
             </Row>
-            <Row lg={4} md={3} sm={2} xs={1} className="g-4">
+            <Row lg={4} md={3} sm={2} xs={1} className="mx-auto">
                 {/*START:  COl > CARD */}
                 {product.map((item, index) => {
                     return (
-                        <Col key={index} xs={8}>
+                        <Col key={index} className="py-3">
                             <Item {...item} />
                         </Col>
                     );
