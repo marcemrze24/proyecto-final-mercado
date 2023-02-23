@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/proyecto-final-mercado/static/css/main.c2cab247.css",
+    "main.js": "/proyecto-final-mercado/static/js/main.8b614f08.js",
+    "index.html": "/proyecto-final-mercado/index.html",
+    "main.c2cab247.css.map": "/proyecto-final-mercado/static/css/main.c2cab247.css.map",
+    "main.8b614f08.js.map": "/proyecto-final-mercado/static/js/main.8b614f08.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.c2cab247.css",
+    "static/js/main.8b614f08.js"
+  ]
+}
