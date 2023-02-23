@@ -14,7 +14,7 @@ const ItemDetail = ({
     category,
 }) => {
     const [counter, setCounter] = useState(1);
-    const { cart, addToCart, isInCart, updateCartItem, removeCartItem } =
+    const { addToCart, isInCart, updateCartItem, removeCartItem } =
         useContext(CartContext);
     const counterSubstraction = () => {
         counter > 1 && setCounter(counter - 1);
