@@ -1,0 +1,25 @@
+h1 {
+    font-size: 2rem;
+    line-height: 3rem;
+}
+p {
+    font-size: 0.7rem;
+    line-height: 1.2rem;
+}
+.form-floating {
+    letter-spacing: normal;
+    position: relative;
+}
+.icon-fix {
+    position: absolute;
+    top: 40%;
+    left: 1.25rem;
+}
+.form-floating label,
+.form-floating .form-control {
+    left: 0.5rem;
+    padding-left: 3.5rem;
+}
+.newsletter-bg {
+    background-color: rgb(244, 244, 244);
+}

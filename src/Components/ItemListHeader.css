@@ -1,0 +1,15 @@
+.header-bar {
+    width: 10rem;
+    height: 5px;
+    background-color: bisque;
+}
+.header-text {
+    letter-spacing: normal;
+    font-size: 0.8rem;
+    line-height: 2rem;
+    word-spacing: 2px;
+}
+.header-subtitle {
+    font-size: 0.7rem;
+    letter-spacing: 1px;
+}

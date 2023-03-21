@@ -1,0 +1,17 @@
+.banner-center {
+    min-height: 100vh;
+    display: grid;
+    place-items: center;
+}
+.banner-text {
+    font-size: 4rem;
+    line-height: 4.5rem;
+}
+.banner-button {
+    font-size: 0.8rem;
+    letter-spacing: 1px;
+}
+.separation {
+    letter-spacing: 3px;
+    font-size: 4rem;
+}

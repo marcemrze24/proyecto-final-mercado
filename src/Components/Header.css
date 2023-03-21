@@ -1,0 +1,5 @@
+header {
+    background: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.7)),
+        url("../../public/background-1.jpg") center/cover no-repeat;
+    min-height: 100vh;
+}

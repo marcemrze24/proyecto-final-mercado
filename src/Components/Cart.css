@@ -1,0 +1,4 @@
+.cart-container {
+    display: grid;
+    place-items: center;
+}

@@ -1,17 +1,15 @@
 import AppRouter from "./components/AppRouter";
 import { CartProvider } from "./components/CartContext";
 import { LoginProvider } from "./components/LoginContext";
-import { SignInProvider } from "./components/SignInContext";
+import "./App.css";
 
 function App() {
     return (
-        <SignInProvider>
-            <LoginProvider>
-                <CartProvider>
-                    <AppRouter />
-                </CartProvider>
-            </LoginProvider>
-        </SignInProvider>
+        <LoginProvider>
+            <CartProvider>
+                <AppRouter />
+            </CartProvider>
+        </LoginProvider>
     );
 }
 

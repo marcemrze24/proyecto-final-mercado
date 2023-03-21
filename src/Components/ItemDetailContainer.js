@@ -4,6 +4,7 @@ import { useParams, useNavigate } from "react-router-dom";
 import { Container, Row, Col, Button } from "react-bootstrap";
 import { doc, getDoc } from "@firebase/firestore";
 import { db } from "../firebase/config";
+import Header from "./Header";
 
 const ItemDetailContainer = () => {
     const navigate = useNavigate();
@@ -17,22 +18,25 @@ const ItemDetailContainer = () => {
     }, [itemId]);
 
     return (
-        <Container className="my-5">
-            <Row className="pb-5 text-end">
-                <Col>
-                    <Button
-                        variant="primary"
-                        className="rounded-0"
-                        onClick={() => {
-                            navigate(-1);
-                        }}
-                    >
-                        Go back
-                    </Button>
-                </Col>
-            </Row>
-            {item && <ItemDetail {...item} />}
-        </Container>
+        <>
+            <Header />
+            <Container className="py-5">
+                <Row className="pb-5 text-end">
+                    <Col>
+                        <Button
+                            variant="primary"
+                            className="rounded-0"
+                            onClick={() => {
+                                navigate(-1);
+                            }}
+                        >
+                            Go back
+                        </Button>
+                    </Col>
+                </Row>
+                {item && <ItemDetail {...item} />}
+            </Container>
+        </>
     );
 };
 

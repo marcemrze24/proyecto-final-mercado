@@ -1,8 +1,10 @@
-import { Button, Row, Col, Image } from "react-bootstrap";
+import { Button, Row, Col, Image, Card } from "react-bootstrap";
 import ItemCounter from "./ItemCounter";
 import { useState } from "react";
 import { useContext } from "react";
 import { CartContext } from "./CartContext";
+import { Link } from "react-router-dom";
+import "./ItemDetail.css";
 
 const ItemDetail = ({
     id,
@@ -36,45 +38,44 @@ const ItemDetail = ({
         !isInCart(id) ? addToCart(item) : updateCartItem(item);
     };
     return (
-        <Row>
-            <Col
-                lg={7}
-                className="d-flex justify-content-center align-content-center"
-            >
-                <Image fluid src={image} />
-            </Col>
-            <Col lg={5}>
-                <Row>
-                    <Col>
-                        <span className="text-uppercase">{category}</span>
-                        <h1 className="fw-semibold fs-1">{name}</h1>
-                        <span className="text-muted fw-semibold fs-4">
-                            $ {price}
-                        </span>
-                    </Col>
-                </Row>
-                <Row>
-                    <Col>
-                        <p className="lh-sm text-muted fw-semibold pt-4">
-                            {description}
-                        </p>
-                    </Col>
-                </Row>
-                <Row>
-                    <Col>
-                        <ItemCounter
-                            counter={counter}
-                            handleSubs={counterSubstraction}
-                            handleSum={counterAddition}
-                        />
-                    </Col>
-                </Row>
-                {isInCart(id) ? (
-                    <Row>
-                        <Col lg={5}>
+        <div className="p-3">
+            <Row xs={1} md={2}>
+                <Col xs={12} sm={12} lg={5} xl={4} className="mx-auto">
+                    <Image fluid src={image} />
+                </Col>
+                <Col>
+                    <Card className="border-0">
+                        <Card.Body className="px-0">
+                            <Card.Title className="fw-semibold pt-2 pb-2">
+                                <Link
+                                    className="text-decoration-none text-dark item-title"
+                                    to={`/item/${id}`}
+                                >
+                                    {name}
+                                </Link>
+                            </Card.Title>
+                            <Card.Subtitle className="text-muted text-capitalize d-flex justify-content-between opacity-75 py-2">
+                                <div className="stars-size">
+                                    <i className="fas fa-star text-warning"></i>
+                                    <i className="fas fa-star text-warning"></i>
+                                    <i className="fas fa-star text-warning"></i>
+                                    <i className="fas fa-star text-warning"></i>
+                                    <i className="fas fa-star text-secondary"></i>
+                                </div>
+                            </Card.Subtitle>
+                            <Card.Text className="text-muted item-price opacity-75 pt-3">
+                                ${price}
+                            </Card.Text>
+                            <Card.Text className="item-description text-muted py-4">
+                                {description}
+                            </Card.Text>
+                        </Card.Body>
+                    </Card>
+                    {isInCart(id) ? (
+                        <Col>
                             <Button
                                 variant="danger"
-                                className="rounded-0 px-5 py-3 text-uppercase"
+                                className="rounded-0 px-4 py-3 text-uppercase"
                                 onClick={() => {
                                     removeCartItem(id);
                                 }}
@@ -82,20 +83,29 @@ const ItemDetail = ({
                                 Remove
                             </Button>
                         </Col>
-                    </Row>
-                ) : (
-                    <Col lg={7}>
-                        <Button
-                            variant="success"
-                            className="rounded-0 px-5 py-3 text-uppercase w-100"
-                            onClick={handleAddToCart}
-                        >
-                            Add to cart
-                        </Button>
-                    </Col>
-                )}
-            </Col>
-        </Row>
+                    ) : (
+                        <>
+                            <Col>
+                                <ItemCounter
+                                    counter={counter}
+                                    handleSubs={counterSubstraction}
+                                    handleSum={counterAddition}
+                                />
+                            </Col>
+                            <Col>
+                                <Button
+                                    variant="dark"
+                                    className="rounded-0 px-5 py-3 text-uppercase"
+                                    onClick={handleAddToCart}
+                                >
+                                    Add to cart
+                                </Button>
+                            </Col>
+                        </>
+                    )}
+                </Col>
+            </Row>
+        </div>
     );
 };
 

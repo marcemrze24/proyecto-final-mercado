@@ -1,29 +1,17 @@
-import { Row, Col } from "react-bootstrap";
+import { Row, Col, Container } from "react-bootstrap";
 import Item from "./Item";
 
-export const ItemList = ({ product, categoryId }) => {
+export const ItemList = ({ product }) => {
     return (
-        <div>
+        <Container>
             <Row>
-                {categoryId && (
-                    <h1
-                        className="text-capitalize text-center pb-5"
-                        style={{ fontSize: "3.125rem" }}
-                    >
-                        {categoryId}
-                    </h1>
-                )}
+                <Col>
+                    <p className="text-uppercase fs-6 fw-bold px-3 mt-5">
+                        {product.length > 0 && product.length} products
+                    </p>
+                </Col>
             </Row>
-            <Row>
-                <p
-                    className="text-uppercase fs-6 fw-semibold py-4"
-                    style={{ color: "gray" }}
-                >
-                    {product.length > 0 && product.length} products
-                </p>
-            </Row>
-            <Row lg={4} md={3} sm={2} xs={1} className="mx-auto">
-                {/*START:  COl > CARD */}
+            <Row xs={1} md={2} lg={3} xl={4} className="p-3">
                 {product.map((item, index) => {
                     return (
                         <Col key={index} className="py-3">
@@ -31,8 +19,7 @@ export const ItemList = ({ product, categoryId }) => {
                         </Col>
                     );
                 })}
-                {/*END:  COl > CARD  */}
             </Row>
-        </div>
+        </Container>
     );
 };

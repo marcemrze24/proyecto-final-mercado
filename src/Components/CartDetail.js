@@ -1,53 +1,43 @@
 import { useContext } from "react";
-import { Button, Col, Row } from "react-bootstrap";
-import { BsTrash } from "react-icons/bs";
+import { Col, Row } from "react-bootstrap";
 import { CartContext } from "./CartContext";
+import "./CartDetail.css";
 
 const CartDetail = () => {
     const { cart, removeCartItem } = useContext(CartContext);
     return (
         <>
-            {cart.map((item, index) => (
+            {cart.map((item) => (
                 <Row
-                    className="align-items-center py-4 my-2 border-bottom fs-6"
-                    key={index}
+                    key={item.id}
+                    className="border-top border-bottom py-3 align-items-center"
                 >
-                    <Col lg={5} sm={12} xs={12} className="mb-2">
-                        <Row className="align-items-center">
-                            <Col lg={3} sm={2} xs={3}>
-                                <img
-                                    src={item.image}
-                                    alt={item.name}
-                                    style={{ height: "100px", width: "80px" }}
-                                />
-                            </Col>
-                            <Col lg={9} sm={10} xs={9} className="px-lg-4">
-                                <p className="mb-0 fw-semibold">{item.name}</p>
-                                <p className="text-muted">{item.category}</p>
-                            </Col>
-                        </Row>
+                    <Col xs={2}>
+                        <img
+                            src={item.image}
+                            alt={item.name}
+                            className="img-fluid"
+                        />
                     </Col>
-                    <Col lg={2} sm={3} xs={3}>
-                        <p className="m-0">$ {item.price}</p>
+                    <Col>
+                        <span className="item-category text-muted text-capitalize">
+                            {item.category}
+                        </span>
+                        <h6 className="item-name fw-bold">{item.name}</h6>
                     </Col>
-                    <Col lg={2} sm={3} xs={3}>
-                        <p className="m-0">{item.counter}</p>
+                    <Col className="text-center">
+                        <h6 className="mb-1">{item.counter}</h6>
                     </Col>
-                    <Col lg={2} sm={3} xs={3}>
-                        <p className="m-0">
-                            $ {parseFloat(item.counter * item.price).toFixed(2)}
-                        </p>
-                    </Col>
-                    <Col lg={1} sm={3} xs={3}>
-                        <Button
-                            variant="light"
-                            className="rounded-circle"
+                    <Col xs="auto">
+                        <span>${item.price * item.counter}</span>
+                        <button
+                            className="btn text-danger"
                             onClick={() => {
                                 removeCartItem(item.id);
                             }}
                         >
-                            <BsTrash />
-                        </Button>
+                            <i className="fas fa-trash-alt"></i>
+                        </button>
                     </Col>
                 </Row>
             ))}

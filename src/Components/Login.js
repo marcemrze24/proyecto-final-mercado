@@ -1,9 +1,11 @@
 import React from "react";
 import { useContext } from "react";
 import { useState } from "react";
-import { Button, Col, Container, Form, Row } from "react-bootstrap";
+import { Col, Container, Row } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import { LoginContext } from "./LoginContext";
+import "./Login.css";
+import video from "../images/video.mp4";
 
 const Login = () => {
     const { user, login, loading } = useContext(LoginContext);
@@ -24,69 +26,96 @@ const Login = () => {
             [e.target.name]: e.target.value,
         });
     };
-
     return (
-        <Container className="my-5 w-100 pt-5">
-            <Row className="pt-5 mt-5">
-                <Col lg={8}>
-                    <h1 className="mb-5">
-                        Welcome to <span className="fw-bold">Shopper.</span>
-                    </h1>
-                    <p className="text-muted fs-5 w-75">
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                        Quasi nam deserunt, iste error suscipit vel odit.
-                        Commodi, voluptas modi doloremque enim fuga velit
-                        nesciunt quam voluptatum quisquam perferendis neque
-                        deserunt.
-                    </p>
-                </Col>
-                <Col lg={4} className="mt-5">
-                    {user.error && <p className="text-danger">{user.error}</p>}
-                    <Form onSubmit={handleFormSubmit}>
-                        <Form.Group controlId="formEmail">
-                            <Form.Label>Email adress</Form.Label>
-                            <Form.Control
-                                type="email"
-                                placeholder="Enter email"
-                                name="email"
-                                value={values.email}
-                                onChange={handleInputChange}
-                            />
-                        </Form.Group>
-                        <Form.Group controlId="formPassword" className="my-3">
-                            <Form.Label>Password</Form.Label>
-                            <Form.Control
-                                type="password"
-                                placeholder="Enter password"
-                                name="password"
-                                value={values.password}
-                                onChange={handleInputChange}
-                            />
-                        </Form.Group>
-                        <Row>
-                            <Col lg={12} className="border-bottom pb-4">
-                                <Button
-                                    variant="primary"
+        <div className="login-container">
+            <video autoPlay muted loop className="video-container">
+                <source src={video} type="video/mp4" />
+            </video>
+            <Container fluid className="container-bg">
+                <Row xs={1} lg={2} className="w-100">
+                    <Col className="mx-auto">
+                        <h1 className="d-none d-lg-block mb-5 text-light">
+                            Welcome to{" "}
+                            <span className="fw-bold text-danger">
+                                Shopper.
+                            </span>
+                        </h1>
+                        <p className="text-light d-none d-lg-block w-75 lh-lg">
+                            Lorem ipsum dolor sit amet consectetur adipisicing
+                            elit. Quasi nam deserunt, iste error suscipit vel
+                            odit. Commodi, voluptas modi doloremque enim fuga
+                            velit nesciunt quam voluptatum quisquam perferendis
+                            neque deserunt.
+                        </p>
+                    </Col>
+                    <Col
+                        sm={10}
+                        md={8}
+                        lg={6}
+                        xl={5}
+                        xxl={3}
+                        className="mx-auto"
+                    >
+                        <h2 className="login-text text-center text-light fw-semibold mb-5">
+                            Login
+                        </h2>
+                        {user.error && (
+                            <p className="text-danger fw-semibold">
+                                {user.error}
+                            </p>
+                        )}
+                        <form onSubmit={handleFormSubmit}>
+                            <div className="form-floating mb-3">
+                                <i className="fas fa-envelope icon-fix fa-lg"></i>
+                                <input
+                                    type="email"
+                                    className="form-control"
+                                    id="floatingEmail"
+                                    placeholder="Email"
+                                    name="email"
+                                    value={values.email}
+                                    onChange={handleInputChange}
+                                />
+                                <label htmlFor="floatingEmail">Email</label>
+                            </div>
+                            <div className="form-floating mb-3">
+                                <i className="fas fa-envelope icon-fix fa-lg"></i>
+                                <input
+                                    type="password"
+                                    className="form-control"
+                                    id="floatingPassword"
+                                    placeholder="Enter Password"
+                                    name="password"
+                                    value={values.password}
+                                    onChange={handleInputChange}
+                                />
+                                <label htmlFor="floatingPassword">
+                                    Password
+                                </label>
+                            </div>
+                            <div className="d-flex flex-column justify-content-between gap-3 mt-4">
+                                <button
                                     type="submit"
-                                    className="w-100 fw-semibold py-2"
+                                    className="btn btn-dark rounded-0 btn-lg px-5"
                                     disabled={loading}
                                 >
-                                    Log In
-                                </Button>
-                            </Col>
-                            <Col lg={12} className="pt-4 text-center">
-                                <Link
-                                    to={"/sign"}
-                                    className="btn btn-success w-50 fw-semibold py-2"
-                                >
-                                    Sign in
-                                </Link>
-                            </Col>
-                        </Row>
-                    </Form>
-                </Col>
-            </Row>
-        </Container>
+                                    {loading ? "Loading..." : "Login"}
+                                </button>
+                                <div className="d-flex justify-content-center align-items-center">
+                                    <span>New user?</span>
+                                    <Link
+                                        to={"/sign"}
+                                        className="btn btn-link text-muted sign-btn px-1"
+                                    >
+                                        Sign in
+                                    </Link>
+                                </div>
+                            </div>
+                        </form>
+                    </Col>
+                </Row>
+            </Container>
+        </div>
     );
 };
 

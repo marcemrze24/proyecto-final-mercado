@@ -1,0 +1,23 @@
+.stars-size {
+    font-size: 0.75rem;
+}
+.item-subtitle {
+    font-size: 0.8rem;
+    letter-spacing: normal;
+}
+.item-subtitle:hover {
+    color: crimson !important;
+}
+.item-title {
+    font-size: 0.8rem;
+    letter-spacing: 1px;
+    word-spacing: 1px;
+}
+.item-title:hover {
+    color: crimson !important;
+}
+.item-price {
+    font-size: 1rem;
+    letter-spacing: normal;
+    cursor: pointer;
+}

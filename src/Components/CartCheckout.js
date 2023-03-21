@@ -2,18 +2,15 @@ import { useContext } from "react";
 import { Col, Row, Card, Button } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import { CartContext } from "./CartContext";
+import "./CartCheckout.css";
 
 const CartCheckout = () => {
     const { totalCart, emptyCart } = useContext(CartContext);
     return (
-        <Col lg={4} className="my-sm-4 my-lg-0">
+        <Col className="p-5">
             <Card className="rounded-0 text-capitalize">
                 <Card.Header className="p-4 pb-3">
-                    <Row>
-                        <Col>
-                            <h5>order summary</h5>
-                        </Col>
-                    </Row>
+                    <h5>order summary</h5>
                 </Card.Header>
                 <Card.Body className="p-4 pb-3">
                     <Row>
@@ -33,7 +30,7 @@ const CartCheckout = () => {
                         </Col>
                     </Row>
                 </Card.Body>
-                <Card.Footer className="p-4 pb-3 fs-5">
+                <Card.Footer className="p-4 pb-3">
                     <Row>
                         <Col>
                             <p>total</p>

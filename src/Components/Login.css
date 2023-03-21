@@ -1,0 +1,48 @@
+h1 {
+    font-size: 2.5rem;
+}
+.sign-btn:hover {
+    color: crimson !important;
+}
+.form-floating {
+    letter-spacing: normal;
+    position: relative;
+}
+.icon-fix {
+    position: absolute;
+    top: 40%;
+    left: 1.25rem;
+}
+.form-floating label,
+.form-floating .form-control {
+    left: 0.5rem;
+    padding-left: 3.5rem;
+}
+.login-text {
+    font-size: 2.5rem;
+}
+.form-control {
+    border: 1px solid #212529;
+    border-radius: 0;
+    transition: 0.1s ease all;
+}
+.form-control:focus {
+    border: 2px solid #0075ff;
+    outline: none;
+    box-shadow: 3px 0px 30px rgba(163, 163, 163, 0.4);
+}
+.login-container {
+    position: relative;
+    min-height: 100vh;
+    display: grid;
+    place-items: center;
+}
+.video-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -2;
+}
