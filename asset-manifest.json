@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/proyecto-final-mercado/static/css/main.a6f1cbec.css",
-    "main.js": "/proyecto-final-mercado/static/js/main.e5442594.js",
+    "main.css": "/proyecto-final-mercado/static/css/main.11f91ac5.css",
+    "main.js": "/proyecto-final-mercado/static/js/main.3d4f3bc0.js",
     "static/media/video.mp4": "/proyecto-final-mercado/static/media/video.9fb48ce50b6af8a0f5f4.mp4",
     "static/media/women.jpg": "/proyecto-final-mercado/static/media/women.8437051a52b2b4b93861.jpg",
     "static/media/men.jpeg": "/proyecto-final-mercado/static/media/men.a3179cf743d49c4da556.jpeg",
@@ -14,11 +14,11 @@
     "static/media/collage-2.jpeg": "/proyecto-final-mercado/static/media/collage-2.bf48c00a48917c065e12.jpeg",
     "static/media/background-1.jpg": "/proyecto-final-mercado/static/media/background-1.cc5a9fd91d0bacd32bbc.jpg",
     "index.html": "/proyecto-final-mercado/index.html",
-    "main.a6f1cbec.css.map": "/proyecto-final-mercado/static/css/main.a6f1cbec.css.map",
-    "main.e5442594.js.map": "/proyecto-final-mercado/static/js/main.e5442594.js.map"
+    "main.11f91ac5.css.map": "/proyecto-final-mercado/static/css/main.11f91ac5.css.map",
+    "main.3d4f3bc0.js.map": "/proyecto-final-mercado/static/js/main.3d4f3bc0.js.map"
   },
   "entrypoints": [
-    "static/css/main.a6f1cbec.css",
-    "static/js/main.e5442594.js"
+    "static/css/main.11f91ac5.css",
+    "static/js/main.3d4f3bc0.js"
   ]
 }
