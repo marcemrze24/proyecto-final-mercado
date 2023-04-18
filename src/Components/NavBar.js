@@ -20,6 +20,9 @@ function NavBar({ headerRef }) {
             navRef.current.style.height = 0;
         }
     };
+    if (!user.logged) {
+        return;
+    }
     return (
         <nav className="navbar-background p-2" id="nav">
             <div className="text-center d-lg-flex justify-content-lg-between">

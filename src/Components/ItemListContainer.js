@@ -55,7 +55,7 @@ function ItemListContainer() {
     return (
         <>
             <Header />
-            <Container className="my-5" fluid>
+            <Container className="my-5">
                 <ItemListHeader />
                 <ItemListCollage />
                 <ItemListFeatured product={product} />

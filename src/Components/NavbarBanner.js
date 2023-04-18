@@ -7,7 +7,7 @@ const NavbarBanner = ({ category }) => {
     if (category || location.pathname === "/shop") {
         return (
             <div className="banner-center">
-                <div className="text-white w-50 p-5">
+                <div className="text-white w-100 p-5">
                     <h1 className="text-capitalize text-light banner-text pb-5 separation">
                         {category || "shop"}
                     </h1>

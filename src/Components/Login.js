@@ -79,7 +79,7 @@ const Login = () => {
                                 <label htmlFor="floatingEmail">Email</label>
                             </div>
                             <div className="form-floating mb-3">
-                                <i className="fas fa-envelope icon-fix fa-lg"></i>
+                                <i className="fas fa-key icon-fix fa-lg"></i>
                                 <input
                                     type="password"
                                     className="form-control"
@@ -101,11 +101,11 @@ const Login = () => {
                                 >
                                     {loading ? "Loading..." : "Login"}
                                 </button>
-                                <div className="d-flex justify-content-center align-items-center">
+                                <div className="d-flex justify-content-center align-items-center text-white">
                                     <span>New user?</span>
                                     <Link
                                         to={"/sign"}
-                                        className="btn btn-link text-muted sign-btn px-1"
+                                        className="btn btn-link text-white sign-btn px-1"
                                     >
                                         Sign in
                                     </Link>

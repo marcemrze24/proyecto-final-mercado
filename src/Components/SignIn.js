@@ -54,7 +54,7 @@ const SignIn = () => {
                 <Form onSubmit={handleNewUser}>
                     <div className="d-flex">
                         <div className="form-floating mb-3">
-                            <i className="fas fa-envelope icon-fix fa-lg"></i>
+                            <i className="fas fa-user icon-fix fa-lg"></i>
                             <input
                                 type="text"
                                 className="form-control"
@@ -70,7 +70,7 @@ const SignIn = () => {
                             </label>
                         </div>
                         <div className="form-floating mb-3">
-                            <i className="fas fa-envelope icon-fix fa-lg"></i>
+                            <i className="fas fa-user icon-fix fa-lg"></i>
                             <input
                                 type="text"
                                 className="form-control"
@@ -99,7 +99,7 @@ const SignIn = () => {
                         <label htmlFor="floatingEmail">Email</label>
                     </div>
                     <div className="form-floating mb-3">
-                        <i className="fas fa-envelope icon-fix fa-lg"></i>
+                        <i className="fas fa-key icon-fix fa-lg"></i>
                         <input
                             type="password"
                             className="form-control"
@@ -114,7 +114,7 @@ const SignIn = () => {
                     </div>
                     <div className="d-flex">
                         <div className="form-floating mb-3">
-                            <i className="fas fa-envelope icon-fix fa-lg"></i>
+                            <i className="fas fa-city icon-fix fa-lg"></i>
                             <input
                                 type="text"
                                 className="form-control"
@@ -128,7 +128,7 @@ const SignIn = () => {
                             <label htmlFor="floatingCity">City / Town</label>
                         </div>
                         <div className="form-floating mb-3">
-                            <i className="fas fa-envelope icon-fix fa-lg"></i>
+                            <i className="fas fa-monument icon-fix fa-lg"></i>
                             <input
                                 type="text"
                                 className="form-control"
@@ -146,7 +146,7 @@ const SignIn = () => {
                     </div>
                     <div className="d-flex">
                         <div className="form-floating mb-3">
-                            <i className="fas fa-envelope icon-fix fa-lg"></i>
+                            <i className="fas fa-globe icon-fix fa-lg"></i>
                             <input
                                 type="text"
                                 className="form-control"
@@ -160,7 +160,7 @@ const SignIn = () => {
                             <label htmlFor="floatingCountry">Country</label>
                         </div>
                         <div className="form-floating mb-3">
-                            <i className="fas fa-envelope icon-fix fa-lg"></i>
+                            <i className="fas fa-mailbox icon-fix fa-lg"></i>
                             <input
                                 type="number"
                                 className="form-control"

@@ -45,6 +45,9 @@ const NewsletterForm = () => {
                     <button
                         type="submit"
                         className="btn btn-outline-dark rounded-0 btn-lg"
+                        onClick={(e) => {
+                            e.preventDefault();
+                        }}
                     >
                         Subscribe
                     </button>
