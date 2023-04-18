@@ -7,7 +7,7 @@ import PublicRoutes from "./PublicRoutes";
 const AppRouter = () => {
     const { user } = useContext(LoginContext);
     return (
-        <BrowserRouter>
+        <BrowserRouter basename="/proyecto-final-mercado">
             {user.logged ? <PrivateRoutes /> : <PublicRoutes />}
         </BrowserRouter>
     );

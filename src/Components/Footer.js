@@ -13,16 +13,32 @@ const Footer = () => {
                     lg={7}
                     xxl={6}
                 >
-                    <a href="#!">
+                    <a
+                        href="https://www.instagram.com/"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                    >
                         <i className="fab fa-instagram"></i>
                     </a>
-                    <a href="%!">
+                    <a
+                        href="https://www.youtube.com/"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                    >
                         <i className="fab fa-youtube"></i>
                     </a>
-                    <a href="#!">
+                    <a
+                        href="https://twitter.com/"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                    >
                         <i className="fab fa-twitter"></i>
                     </a>
-                    <a href="#!">
+                    <a
+                        href="https://www.facebook.com/"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                    >
                         <i className="fab fa-facebook-f"></i>
                     </a>
                 </Col>
